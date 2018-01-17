@@ -1,6 +1,7 @@
 # coding=utf-8
 import json
 import requests
+import ModelDemo
 
 # 安装requests: pip install requests
 
@@ -16,6 +17,13 @@ def getRequest():
     """get请求"""
 
     # 发送get请求
+    demo = ModelDemo.Hander()
+    url = demo.createurl(baseurl, api1)
+    print url
+
+    print ModelDemo.add(1,2)
+
+
     res = requests.get(baseurl + api1)
 
     content = res.content
@@ -92,7 +100,7 @@ def responseContent():
 
 
 if __name__ == '__main__':
-    # getRequest()
+    getRequest()
     # postRequest()
     # createHeader()
     # createCookies()
